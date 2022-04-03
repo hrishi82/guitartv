@@ -42,6 +42,7 @@
     color: var(text-default-clr);
     box-shadow: 0px 10px 30px 10px rgba(0,0,0,0.28);
     z-index: 999;
+    position: -webkit-sticky;
 }
 .nav-items-left{
     display: flex;

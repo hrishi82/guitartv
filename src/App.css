@@ -1,20 +1,11 @@
-.main-website-layout-wrapper{
-    display:flex;
-    margin:auto;
-    justify-content: flex-start;
-    height: 100vh;
-    max-width: 120rem;
-    position: relative;
-}
 
-.main-content-section{
-  overflow-y: scroll;
+
+.App{
   width:100%;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
 }
 
-.main-content-section::-webkit-scrollbar { /* WebKit */
+.App::-webkit-scrollbar { /* WebKit */
   width: 0;
   height: 0;
 }

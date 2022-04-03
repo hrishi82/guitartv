@@ -1,7 +1,8 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { HomePage } from "./pages";
-import { NavBar, AsideBar } from "./components";
+import { HomePage, AllVideos, SingleVideoPage, LikedVideosPage, LoginPage, ErrorPg } from "./pages";
+import { NavBar} from "./components";
+import {ProtectedRoute} from "./Routes/ProtectedRoute"
 
 import Mockman from "mockman-js";
 function MockAPI() {
@@ -12,19 +13,21 @@ function MockAPI() {
   );
 }
 
+
 function App() {
   return (
-    <div className="App">
+    <div className="App relative">
       <NavBar />
-      <div className="main-website-layout-wrapper">
-        <AsideBar />
-        <div className="main-content-section">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/mockman" element={<MockAPI />} />
-          </Routes>
-        </div>
-      </div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/mockman" element={<MockAPI />} />
+          <Route path="/allvideos" element={<AllVideos />} />
+          <Route path="/SingleVideoPage/:videoID" element={<SingleVideoPage />} />
+          <Route path="/likedvideospage" element={<ProtectedRoute><LikedVideosPage /></ProtectedRoute>} />
+
+          <Route path="/loginpage" element={<LoginPage />} />
+          <Route path="*" element={<ErrorPg />} />
+        </Routes>
     </div>
   );
 }

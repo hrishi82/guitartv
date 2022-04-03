@@ -7,7 +7,7 @@ const HomePage = () => {
     <div className="main-container">
       <div className="section-gutter-reg"></div>
       <HeroSection />
-      <div className="section-gutter-md"></div>
+      <div className="section-gutter-lg"></div>
       <Category />
     </div>
   );
