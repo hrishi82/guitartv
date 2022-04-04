@@ -12,6 +12,7 @@
   
   --white-bg: rgb(255, 255, 255);
   --dark-bg: rgb(31, 31, 31);
+  --grey-bg: rgba(128, 128, 128, 0.226);
   --off-white:rgb(231, 231, 231);
   --super-dark-bg: rgb(0, 0, 0);
 
@@ -29,11 +30,9 @@
   --badge-font-clr: #ffffff;
 
   /* Card */
-  --dismiss-btn-background: #black;
-  --card-bg: black; 
-  --card-text-clr-over-img: white;
-  --eCom-card-badge-bg: white;
-  --eCom-card-secondary-text: rgb(161, 161, 161);
+  --dismiss-btn-background: black;
+  --card-bg: rgb(31, 31, 31);
+
 
   /* Search bar */
   --search-bar-bg-clr: rgb(31, 31, 31);

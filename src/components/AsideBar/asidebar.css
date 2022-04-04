@@ -1,11 +1,13 @@
 
 .sidebar {
-    flex: 0 0 15rem;
+    width: 16rem;
     transition: all 0.5s ease-out;
     height: 100%;
     background-color: var(--super-dark-bg);
-    position: sticky;
-    top: 0;
+    position: fixed;
+    z-index: 2;
+    gap: 2rem;
+    left: 0;
 }
 
 .sidebar-list-container{

@@ -1,0 +1,45 @@
+.singleVideo-page-container{
+    max-width: 60rem;
+    margin: auto;
+    height: 100vh;
+    margin-top: 3rem;
+}
+
+.videoPlayer-cont{
+    height: 55vh;
+} 
+
+.video-details-cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3rem;
+    color: var(--text-default-clr);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid grey
+}
+
+.list-wrapper{
+    display: flex;
+}
+
+.video-title{
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem
+}
+
+.video-secondary-text{
+    font-size: 0.9rem;
+    color: var(--text-grey)
+}
+
+.video-options{
+    margin-left: 3rem;
+    font-size: 1rem;
+    cursor: pointer
+}
+
+.video-reaction-button{
+    font-size: 2rem;
+}

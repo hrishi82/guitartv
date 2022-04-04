@@ -12,7 +12,7 @@ const HeroSection = () =>{
         </section>
 
         <div className="header-btn-container text-center">
-            <Link to="/videopage" className="btn pill-btn pill-btn-lg btn-secondary">Explore All</Link>
+            <Link to="/allvideos" className="btn pill-btn pill-btn-lg btn-secondary">Explore All</Link>
         </div>
     </section>
     )

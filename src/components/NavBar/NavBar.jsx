@@ -1,10 +1,24 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css"
+import {useAuth} from "../../context/authContext"
+import {useData} from "../../context/dataContext"
+
 
 
 
 
 const NavBar = () => {
+
+  const {token, setToken, setUser} = useAuth()
+  const {dispatch} = useData()
+
+  const logoutHandler = (e) =>{
+    e.preventDefault()
+    localStorage.removeItem("login")
+    setToken(null)
+    setUser(null)
+    dispatch({type: "SET_LIKED_VIDEOS", payload: []})
+  }
 
   return (
     <nav className="nav-wrapper">
@@ -25,23 +39,25 @@ const NavBar = () => {
             className="search-bar"
           />
           <button type="submit" className="search-bar-btn">
-            <i className="far fa-search"></i>
+            <i className="fas fa-search"></i>
           </button>
         </div>
       </nav>
 
       <nav className="nav-items-right">
-      <Link to="/productpage" className="nav-link">
-          All Videos
+      <Link to="/allvideos" className="nav-link">
+          ALL VIDEOS
         </Link>
 
-        <Link to="/playlistpage" className="nav-link">
-          Playlist
-        </Link>
-
+        {token ? <Link to="/loginpage" className="nav-link" onClick={(e)=>logoutHandler(e)}>
+          LOGOUT </Link> : 
          <Link to="/loginpage" className="nav-link">
-          Login
-        </Link>
+          LOGIN
+        </Link>}
+
+         {token && <Link to="/profilepage" className="nav-link">
+          PROFILE
+        </Link>}
       </nav>
     </nav>
   );
