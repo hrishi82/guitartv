@@ -1,6 +1,9 @@
 .product-card{
     width: 21rem; 
     overflow: visible;
+}
+
+.product-card-img-box{
     cursor: pointer;
 }
 

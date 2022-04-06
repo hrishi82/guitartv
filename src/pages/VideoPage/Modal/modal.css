@@ -1,0 +1,85 @@
+/* Modal styles */
+.modal{
+    width: 18rem;
+    padding: 0;
+    background-color: var(--card-bg);
+    display: block;
+}
+
+.modal-title{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.modal-cross-btn{
+    cursor: pointer;
+}
+.modal-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--seperator-line);
+}
+
+.modal-mid-container{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    max-height: 20rem;
+    overflow-y: scroll;
+}
+
+.modal-footer{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--seperator-line);
+}
+
+.li-modal-playlist-cont{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.li-modal-playlist-name{
+    margin-left: 0.8rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-default-clr)
+}
+
+.newplaylist-name{
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    color: white;
+    border-bottom: 1px solid var(--text-grey)
+}
+
+.newplaylist-create-btn{
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+
+
+
+.newplaylist-container{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.newplaylist-title{
+    margin-left: 1rem;
+}
+
+.newplaylist-plus{
+    font-size: rem;
+}
+

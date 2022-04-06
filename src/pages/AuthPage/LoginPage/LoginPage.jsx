@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {loginDetailsFunc, GetLikedVideos} from "../../../services/services"
+import {loginDetailsFunc, GetLikedVideos, getPlaylists} from "../../../services/services"
 import "../Auth.css"
 import {useData} from "../../../context/dataContext"
 import {useAuth} from "../../../context/authContext"
@@ -36,6 +36,12 @@ const LoginPage = () => {
             if (likeResp.status===200 || likeResp.status===201){
                 dispatch({type: "SET_LIKED_VIDEOS", payload: likeResp.data.likes})
             }
+
+            const playlistResp = await getPlaylists({encodedToken: response.data.encodedToken})
+            if (playlistResp.status===200 || playlistResp.status===201){
+              dispatch({type: "SET_PLAYLIST_VIDEOS", payload: playlistResp.data.playlists})
+          }
+
 
             setUser(response.data.foundUser)
             setToken(response.data.encodedToken)

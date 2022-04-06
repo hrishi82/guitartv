@@ -1,10 +1,8 @@
 
 import {useData} from "../../../context/dataContext"
 import { VideoCard } from "../VideoCard/VideoCard";
-// import { useFilterHook } from "../../../hooks/useFilterHook";
 
 const VideoMain = () => {
-//   const { filteredData } = useFilterHook()
     const {state} = useData()
     const {videoData} = state
   

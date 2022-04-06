@@ -1,3 +1,14 @@
+
+/* Video Page styles */
+
+.blur-bg{
+    /* Blur and de-color */
+  -webkit-filter: blur(5px) grayscale(50%);
+
+  /* Recede */
+  -webkit-transform: scale(0.9);
+}
+
 .singleVideo-page-container{
     max-width: 60rem;
     margin: auto;
@@ -43,3 +54,5 @@
 .video-reaction-button{
     font-size: 2rem;
 }
+
+

@@ -27,11 +27,11 @@ export const VideoCard = ({data}) =>{
     }
 
     return (
-        <div className="product-card" onClick={redirectToVideo}>
+        <div className="product-card">
   
-        <div className="product-card-img-box">
+        <div className="product-card-img-box" onClick={redirectToVideo}>
           <img
-            src={thumbnail ? thumbnail : "../../../assets/images/noimg.png"}
+            src={thumbnail ? thumbnail : "https://res.cloudinary.com/dac2rwutk/image/upload/v1649183491/thumbnail_dnbn5i.jpg"}
             alt="video"
             className="img-responsive"
           />
