@@ -13,7 +13,7 @@ export const VideoCard = ({data}) =>{
 
     const navigate = useNavigate()
 
-    const {state, dispatch, addVideosToWatchlater, deleteVideosFromWatchlater} = useData()
+    const {state, dispatch, addVideosToWatchlater, deleteVideosFromWatchlater, addVideosToHistory} = useData()
     const {token} = useAuth()
 
     const {
@@ -32,7 +32,9 @@ export const VideoCard = ({data}) =>{
     }
 
     const redirectToVideo = () =>{
+      addVideosToHistory(data)
       navigate(`/SingleVideoPage/${_id}`)
+
     }
 
     
