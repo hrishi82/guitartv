@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.video-card-body{
+.pvc-video-card-body{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -16,26 +16,26 @@
     color: var(--text-default-clr);
 }
 
-.video-card-body-content{
+.pvc-video-card-body-content{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
 }
 
-.video-card-title{
+.pvc-video-card-title{
     font-weight: 500;
     font-size: 0.95rem;
     margin-bottom: 0.6rem;
 }
 
-.video-card-subtitle{
+.pvc-video-card-subtitle{
     font-weight: 400;
     font-size: 0.8rem;
     color: var(--text-grey)
 }
 
-.videocard-option-container{
+.pvc-videocard-option-container{
     margin-left: 5rem;
     padding: 0.5rem;
     cursor: pointer;
@@ -45,7 +45,7 @@
     color: white;
 }
 
-.video-card-option-wrapper{
+.pvc-video-card-option-wrapper{
     background-color: var(--card-bg);
     z-index: 1;
     position: absolute;
@@ -55,11 +55,9 @@
 
 }
 
-.video-card-options{
-    padding: 1rem;
-    font-size: 0.9rem;
-}
 
-.video-card-options:hover{
-    background-color: var(--grey-bg);
+.pvc-trashcan{
+    color: rgb(190, 0, 0);
+    font-size: 1.3rem;
+    cursor: pointer;
 }

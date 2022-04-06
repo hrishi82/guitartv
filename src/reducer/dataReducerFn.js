@@ -1,4 +1,4 @@
-import { useEffect } from "react/cjs/react.production.min"
+
 
 export const dataReducerFn = (state, action) =>{
     switch(action.type){
@@ -12,6 +12,16 @@ export const dataReducerFn = (state, action) =>{
         case "SET_LIKED_VIDEOS":{
             return {...state, likedVideos: action.payload}
         }
+
+        case "SET_PLAYLIST_VIDEOS":{
+            return {...state, playlists: action.payload}
+        }
+
+        case "SET_WATCHLATER_VIDEOS":{
+            return {...state, watchLater: action.payload}
+        }
+
+
         default:
             return state
     }

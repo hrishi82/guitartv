@@ -11,7 +11,7 @@ export const AsideBar = () => {
           </Link>
         </li>
         <li className="sidebar-li-item">
-          <Link to="/abc" className="sidebar-links" >
+          <Link to="/allplaylistpage" className="sidebar-links" >
             Playlist
           </Link>
         </li>
@@ -21,12 +21,12 @@ export const AsideBar = () => {
           </Link>
         </li>
         <li className="sidebar-li-item">
-          <Link to="/" className="sidebar-links">
+          <Link to="/watchlaterpage" className="sidebar-links">
             Watch Later
           </Link>
         </li>
         <li className="sidebar-li-item">
-          <Link to="/" className="sidebar-links" >
+          <Link to="/historypage" className="sidebar-links" >
             History
           </Link>
         </li>

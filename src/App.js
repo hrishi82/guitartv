@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { HomePage, AllVideos, SingleVideoPage, LikedVideosPage, LoginPage, ErrorPg } from "./pages";
+import { HomePage, AllVideos, SingleVideoPage, LikedVideosPage, AllPlaylists, PlaylistVideosPage, WatchlaterPage, LoginPage, ErrorPg } from "./pages";
 import { NavBar} from "./components";
 import {ProtectedRoute} from "./Routes/ProtectedRoute"
 
@@ -24,6 +24,9 @@ function App() {
           <Route path="/allvideos" element={<AllVideos />} />
           <Route path="/SingleVideoPage/:videoID" element={<SingleVideoPage />} />
           <Route path="/likedvideospage" element={<ProtectedRoute><LikedVideosPage /></ProtectedRoute>} />
+          <Route path="/allplaylistpage" element={<ProtectedRoute><AllPlaylists /></ProtectedRoute>} />
+          <Route path="/allplaylistpage/:playlistID" element={<ProtectedRoute><PlaylistVideosPage /></ProtectedRoute>} />
+          <Route path="/watchlaterpage" element={<ProtectedRoute><WatchlaterPage /></ProtectedRoute>} />
 
           <Route path="/loginpage" element={<LoginPage />} />
           <Route path="*" element={<ErrorPg />} />

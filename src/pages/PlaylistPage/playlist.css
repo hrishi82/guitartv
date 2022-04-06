@@ -1,0 +1,9 @@
+.playlistcard-trashcan{
+    color: rgb(190, 0, 0);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.playlist-card-body{
+    align-items: flex-end;
+}
