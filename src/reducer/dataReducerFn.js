@@ -17,6 +17,10 @@ export const dataReducerFn = (state, action) =>{
             return {...state, playlists: action.payload}
         }
 
+        case "SET_WATCHLATER_VIDEOS":{
+            return {...state, watchLater: action.payload}
+        }
+
 
         default:
             return state

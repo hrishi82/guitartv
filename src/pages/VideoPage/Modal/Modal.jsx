@@ -3,7 +3,30 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../../../context/dataContext";
 import { useAuth } from "../../../context/authContext";
-import {createNewPlaylistService, addVideoToPlaylistService, deleteVideoInPlaylistService} from "../../../services/services"
+import {createNewPlaylistService} from "../../../services/services"
+
+
+const ListItem = ({ playlistData, videoData, videoInPlaylistHandler }) => {
+    const findVideoinPlaylist = playlistData.videos.some(
+      (eachVid) => eachVid._id === videoData._id
+    );
+    return (
+      <div className="li-modal-playlist-cont">
+        <input
+          type="checkbox"
+          name="playlist"
+          className="li-playlist-checkbox"
+          onChange={(e) => videoInPlaylistHandler(e, playlistData)}
+          checked={findVideoinPlaylist}
+        />
+        <label htmlFor="playlist" className="li-modal-playlist-name">
+          {playlistData.title}
+        </label>
+      </div>
+    );
+  };
+
+
 
 export const PlaylistModal = ({ setViewOption, videoData }) => {
     const {token} = useAuth()
@@ -50,23 +73,6 @@ const videoInPlaylistHandler = (e, playlistData) =>{
     }
 }
 
-
-  const ListItem = ({playlistData}) =>{
-
-    const findVideoinPlaylist = playlistData.videos.some(eachVid=>eachVid._id === videoData._id)
-      return (
-        <div className="li-modal-playlist-cont">
-        <input type="checkbox" name="playlist" onChange={(e)=>videoInPlaylistHandler(e, playlistData)} checked={findVideoinPlaylist}/>
-        <label
-          htmlFor="playlist"
-          className="li-modal-playlist-name"
-        >
-          {playlistData.title}
-        </label>
-      </div>
-      )
-  }
-
   return (
     <div className="modal">
       <div className="modal-header">
@@ -77,8 +83,16 @@ const videoInPlaylistHandler = (e, playlistData) =>{
       </div>
 
       <div className="modal-mid-container">
-        {state.playlists.length === 0 && <p>No Playlist found!</p>}
-        {state.playlists.length > 0 && state.playlists.map((el)=><ListItem key={el._id} playlistData={el}/> )}
+        {state?.playlists?.length === 0 && <p>No Playlist found!</p>}
+        {state?.playlists?.length > 0 &&
+          state.playlists.map((el) => (
+            <ListItem
+              key={el._id}
+              playlistData={el}
+              videoData={videoData}
+              videoInPlaylistHandler={videoInPlaylistHandler}
+            />
+          ))}
       </div>
 
       <div className="modal-footer">
@@ -109,9 +123,9 @@ const videoInPlaylistHandler = (e, playlistData) =>{
             <p className="newplaylist-title">Create new playlist</p>
           </div>
         )}
-
-        <button onClick={()=>console.log(state.playlists)}>check</button>
       </div>
     </div>
   );
 };
+
+

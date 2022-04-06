@@ -35,9 +35,13 @@ export const PlaylistCard = ({ data }) => {
     }
   };
 
+  const redirectToPlaylist = () =>{
+    navigate(`/allplaylistpage/${_id}`)
+  }
+
   return (
     <div className="product-card">
-      <div className="product-card-img-box">
+      <div className="product-card-img-box" onClick={redirectToPlaylist}>
         <img
           src="https://res.cloudinary.com/dac2rwutk/image/upload/v1649176848/playlist_s36y99.jpg"
           alt="video"

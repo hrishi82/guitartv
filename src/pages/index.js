@@ -4,6 +4,8 @@ export {SingleVideoPage} from "./VideoPage/SingleVideoPage/SingleVideoPage"
 export {LikedVideosPage} from "./LikedVideosPage/LikedVideosPage"
 export {AllPlaylists} from "./PlaylistPage/AllPlaylists"
 export {LoginPage} from "./AuthPage/LoginPage/LoginPage"
+export {PlaylistVideosPage} from "./PlaylistPage/PlaylistVideos/PlaylistVideosPage"
+export {WatchlaterPage} from "./WatchlaterPage/WatchlaterPage"
 
 
 export {ErrorPg} from "./ErrorPg"

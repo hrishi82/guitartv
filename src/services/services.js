@@ -85,3 +85,24 @@ export const deletePlaylistService = async ({ encodedToken, playlistId }) => {
       },
     });
   };
+
+
+  export const getWatchlaterVideosService = async ({encodedToken}) =>{
+      return axios.get("/api/user/watchlater", { headers: { authorization: encodedToken } })
+  }
+
+  export const addVideosToWatchlaterService = async ({ encodedToken, video }) => {
+    const resp = await axios.post(
+      "/api/user/watchlater",
+      { video },
+      { headers: { authorization: encodedToken } }
+    );
+    return resp;
+  };
+
+  export const deleteWatchlaterVideoService = async ({ videoId, encodedToken }) => {
+    const resp = await axios.delete(`/api/user/watchlater/${videoId}`, {
+      headers: { authorization: encodedToken },
+    });
+    return resp;
+  };

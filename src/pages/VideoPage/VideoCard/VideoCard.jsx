@@ -1,11 +1,20 @@
 import {Link, useNavigate} from "react-router-dom"
 import "./VideoCard.css"
 import {useState} from "react"
+import {useData} from "../../../context/dataContext"
+import {useAuth} from "../../../context/authContext"
+import {PlaylistModal} from "../Modal/Modal"
+
 
 export const VideoCard = ({data}) =>{
     const [viewOption, setViewOption] = useState(false)
+    const [viewModal, setViewModal] = useState(false)
+    const [inWatchlist, setInWatchlist] = useState(false)
 
     const navigate = useNavigate()
+
+    const {state, dispatch, addVideosToWatchlater, deleteVideosFromWatchlater} = useData()
+    const {token} = useAuth()
 
     const {
         id,
@@ -26,8 +35,26 @@ export const VideoCard = ({data}) =>{
       navigate(`/SingleVideoPage/${_id}`)
     }
 
+    
+
+    const watchlaterHandler = () =>{
+      
+      const findVid = state?.watchLater?.find(el=> el._id === _id)
+
+      if(!findVid){
+        addVideosToWatchlater(data)
+        setInWatchlist(true)
+      }else{
+        deleteVideosFromWatchlater(data)
+        setInWatchlist(false)
+      }
+    }
+
+
     return (
         <div className="product-card">
+
+        {viewModal && <PlaylistModal setViewOption={setViewModal} videoData={data}/>}
   
         <div className="product-card-img-box" onClick={redirectToVideo}>
           <img
@@ -48,8 +75,8 @@ export const VideoCard = ({data}) =>{
             {viewOption && 
             <>
                 <div className="video-card-option-wrapper">
-                <p className="video-card-options">Add to playlist</p>
-                <p className="video-card-options">Add to Watchlater</p>
+                <p className="video-card-options" onClick={()=>setViewModal(true)}>Add to playlist</p>
+                <p className="video-card-options" onClick={watchlaterHandler}>{inWatchlist ? "Delete from Watchlater":"Add to Watchlater"}</p>
             </div>
             </>}
 

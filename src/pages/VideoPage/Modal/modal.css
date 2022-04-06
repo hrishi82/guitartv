@@ -43,6 +43,11 @@
     margin: 1rem 0;
 }
 
+.li-playlist-checkbox{
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 .li-modal-playlist-name{
     margin-left: 0.8rem;
     font-size: 1rem;

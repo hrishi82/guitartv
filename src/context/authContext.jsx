@@ -15,8 +15,6 @@ const AuthProvider = ({children}) =>{
         }
       }, []);
 
-    //   console.log(localStorageLoginData)
-
     return (
         <AuthContext.Provider value={{user, setUser, token, setToken}}>
             {children}
