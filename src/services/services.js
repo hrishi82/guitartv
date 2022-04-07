@@ -106,3 +106,29 @@ export const deletePlaylistService = async ({ encodedToken, playlistId }) => {
     });
     return resp;
   };
+
+
+  export const getHistoryVideosService = async ({encodedToken}) =>{
+    return axios.get("/api/user/history", { headers: { authorization: encodedToken } })
+}
+
+export const addVideosToHistoryService = async ({ encodedToken, video }) => {
+  const resp = await axios.post(
+    "/api/user/history",
+    { video },
+    { headers: { authorization: encodedToken } }
+  );
+  return resp;
+};
+
+export const deleteHistoryVideoService = async ({ videoId, encodedToken }) => {
+  const resp = await axios.delete(`/api/user/history/${videoId}`, {
+    headers: { authorization: encodedToken },
+  });
+  return resp;
+};
+
+export const deleteAllHistoryService = async ({encodedToken}) =>{
+    return axios.delete("/api/user/history/all", { headers: { authorization: encodedToken } })
+}
+

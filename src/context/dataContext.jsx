@@ -9,7 +9,11 @@ import {
   deleteVideoInPlaylistService,
   getWatchlaterVideosService,
   addVideosToWatchlaterService,
-  deleteWatchlaterVideoService
+  deleteWatchlaterVideoService,
+  getHistoryVideosService,
+  addVideosToHistoryService,
+  deleteHistoryVideoService,
+  deleteAllHistoryService
 } from "../services/services";
 
 const DataContext = createContext();
@@ -24,6 +28,7 @@ const DataProvider = ({ children }) => {
     likedVideos: [],
     watchLater: [],
     playlists: [],
+    history: [],
     filters: {
       categories: [],
       search: "",
@@ -155,9 +160,90 @@ const DataProvider = ({ children }) => {
     }
   };
 
+
+  const getHistoryVideos = async () => {
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+    try {
+      const response = await getHistoryVideosService({
+        encodedToken: token,
+      });
+      if (response.status === 200 || response.status === 201) {
+        dispatch({
+          type: "SET_HISTORY",
+          payload: response.data.history,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const addVideosToHistory = async (videoData) => {
+    try {
+      if (!token) {
+        navigate("/loginpage");
+        return;
+      }
+      const response = await addVideosToHistoryService({
+        encodedToken: token,
+        video: { ...videoData },
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        dispatch({ type: "SET_HISTORY", payload: response.data.history });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const deleteVideosFromHistory = async (videoData) => {
+    try {
+      if (!token) {
+        navigate("/loginpage");
+        return;
+      }
+      const response = await deleteHistoryVideoService({
+        encodedToken: token,
+        videoId: videoData._id
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        dispatch({ type: "SET_HISTORY", payload: response.data.history });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const deleteAllHistory = async () => {
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+    try {
+      const response = await deleteAllHistoryService({
+        encodedToken: token,
+      });
+      console.log("from history", response)
+      
+      if (response.status === 200 || response.status === 201) {
+        dispatch({
+          type: "SET_HISTORY",
+          payload: response.data.history,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
   return (
     <DataContext.Provider
-      value={{ state, dispatch, addVideoToPlaylist, deleteVideoFromPlaylist, addVideosToWatchlater, deleteVideosFromWatchlater }}
+      value={{ state, dispatch, addVideoToPlaylist, deleteVideoFromPlaylist, addVideosToWatchlater, deleteVideosFromWatchlater, addVideosToHistory, deleteVideosFromHistory, deleteAllHistory }}
     >
       {children}
     </DataContext.Provider>

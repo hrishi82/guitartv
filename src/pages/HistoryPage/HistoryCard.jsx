@@ -3,11 +3,11 @@ import "../PlaylistPage/playlist.css"
 import {useData} from "../../context/dataContext"
 
 
-export const WatchlaterCard = ({data}) =>{
+export const HistoryCard = ({data}) =>{
 
     const navigate = useNavigate()
 
-    const { deleteVideosFromWatchlater} = useData()
+    const { deleteVideosFromHistory} = useData()
 
     const {
         _id,
@@ -20,9 +20,9 @@ export const WatchlaterCard = ({data}) =>{
       navigate(`/SingleVideoPage/${_id}`)
     }
 
-    const deleteVideofromWatchlaterHandler = () =>{
+    const deleteVideofromHistoryHandler = () =>{
         try{
-            deleteVideosFromWatchlater(data)
+            deleteVideosFromHistory(data)
         }catch(err){
             console.log(err)
         }
@@ -46,7 +46,7 @@ export const WatchlaterCard = ({data}) =>{
             <p className="video-card-subtitle">{creator}</p>
           </section>
           <div className="videocard-option-container relative">
-            <div className="video-card-option-wrapper" onClick={deleteVideofromWatchlaterHandler}>
+            <div className="video-card-option-wrapper" onClick={deleteVideofromHistoryHandler}>
                     <i className="fas fa-trash-alt playlistcard-trashcan"></i>
             </div>
 

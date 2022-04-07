@@ -20,6 +20,9 @@ export const dataReducerFn = (state, action) =>{
         case "SET_WATCHLATER_VIDEOS":{
             return {...state, watchLater: action.payload}
         }
+        case "SET_HISTORY":{
+            return {...state, history: action.payload}
+        }
 
 
         default:
