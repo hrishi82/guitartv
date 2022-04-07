@@ -1,7 +1,9 @@
 import "./likedvideospage.css"
 import {AsideBar} from "../../components"
 import {useData} from "../../context/dataContext"
-import {VideoCard} from "../VideoPage/VideoCard/VideoCard"
+// import {VideoCard} from "../VideoPage/VideoCard/VideoCard"
+import { LikedVideosCard } from "../LikedVideosPage/LikedVideosCard"
+
 
 export const LikedVideosPage = () =>{
     const {state} = useData()
@@ -15,7 +17,7 @@ export const LikedVideosPage = () =>{
         {state.likedVideos.map((el) => {
           return (
             <>
-              <VideoCard key={el._id} data={el}/>
+              <LikedVideosCard key={el._id} data={el}/>
             </>
           );
         })}

@@ -31,7 +31,7 @@ export const videos = [
     views: 80467,
     category: "Djent",
     src: "https://www.youtube.com/embed/zBWURleQuLc",
-    thumbnail: "https://i.ytimg.com/an_webp/zBWURleQuLc/mqdefault_6s.webp?du=3000&sqp=CKKWoZIG&rs=AOn4CLBxba2A0ZptihdcDkMcADth3Nm0VQ"
+    thumbnail: "https://res.cloudinary.com/dac2rwutk/image/upload/v1649336619/marigold_pxmctg.jpg"
   },
   {
     _id: uuid(),
@@ -49,7 +49,7 @@ export const videos = [
     views: 34467,
     category: "Djent",
     src: "https://www.youtube.com/embed/yAG3inRtrmM",
-    thumbnail: "https://i.ytimg.com/an_webp/yAG3inRtrmM/mqdefault_6s.webp?du=3000&sqp=CMmHoZIG&rs=AOn4CLC-3QMIzE4veaKVNxLRqsQ6u5boWw"
+    thumbnail: "https://res.cloudinary.com/dac2rwutk/image/upload/v1649336619/ishimura_brkh7g.jpg"
   },
   {
     _id: uuid(),
@@ -58,7 +58,7 @@ export const videos = [
     views: 124467,
     category: "Rock",
     src: "https://www.youtube.com/embed/3Ababg5Y8kA",
-    thumbnail: "https://i.ytimg.com/an_webp/3Ababg5Y8kA/mqdefault_6s.webp?du=3000&sqp=CICqoZIG&rs=AOn4CLCG6FbpiOd6AeNBD3Wi55Vs52ltuw"
+    thumbnail: "https://res.cloudinary.com/dac2rwutk/image/upload/v1649336613/rockdiscipline_gggixu.jpg"
   },
   {
     _id: uuid(),
@@ -76,7 +76,7 @@ export const videos = [
     views: 264467,
     category: "Blues",
     src: "https://www.youtube.com/embed/SgXSomPE_FY",
-    thumbnail: "https://i.ytimg.com/an_webp/SgXSomPE_FY/mqdefault_6s.webp?du=3000&sqp=CLyboZIG&rs=AOn4CLCbY5L649jQM9g0RZuxNkZIkSrDDQ"
+    thumbnail: "https://res.cloudinary.com/dac2rwutk/image/upload/v1649336619/bbking_fhdh02.jpg"
   },
 
 ];
