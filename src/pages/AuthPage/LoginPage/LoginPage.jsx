@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {loginDetailsFunc, GetLikedVideos, getPlaylists} from "../../../services/services"
+import {loginDetailsFunc, GetLikedVideos, getPlaylists, getHistoryVideosService, getWatchlaterVideosService} from "../../../services/services"
 import "../Auth.css"
 import {useData} from "../../../context/dataContext"
 import {useAuth} from "../../../context/authContext"
@@ -40,6 +40,16 @@ const LoginPage = () => {
             const playlistResp = await getPlaylists({encodedToken: response.data.encodedToken})
             if (playlistResp.status===200 || playlistResp.status===201){
               dispatch({type: "SET_PLAYLIST_VIDEOS", payload: playlistResp.data.playlists})
+          }
+
+            const watchlaterResp = await getWatchlaterVideosService({encodedToken: response.data.encodedToken})
+            if (watchlaterResp.status===200 || watchlaterResp.status===201){
+              dispatch({type: "SET_WATCHLATER_VIDEOS", payload: watchlaterResp.data.playlists})
+          }
+
+            const histResp = await getHistoryVideosService({encodedToken: response.data.encodedToken})
+            if (histResp.status===200 || histResp.status===201){
+              dispatch({type: "SET_HISTORY", payload: histResp.data.playlists})
           }
 
 

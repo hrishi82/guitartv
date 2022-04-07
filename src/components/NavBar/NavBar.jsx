@@ -18,6 +18,9 @@ const NavBar = () => {
     setToken(null)
     setUser(null)
     dispatch({type: "SET_LIKED_VIDEOS", payload: []})
+    dispatch({type: "SET_PLAYLIST_VIDEOS", payload: []})
+    dispatch({type: "SET_WATCHLATER_VIDEOS", payload: []})
+    dispatch({type: "SET_HISTORY", payload: []})
   }
 
   return (
