@@ -1,5 +1,5 @@
 import "./homepage.css";
-import { Category } from "./Category/Category.jsx";
+import { Genres } from "./Category/Genres.jsx";
 import { HeroSection } from "./HeroSection.jsx";
 
 const HomePage = () => {
@@ -8,7 +8,7 @@ const HomePage = () => {
       <div className="section-gutter-reg"></div>
       <HeroSection />
       <div className="section-gutter-lg"></div>
-      <Category />
+      <Genres />
     </div>
   );
 };

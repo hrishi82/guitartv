@@ -54,7 +54,7 @@ export const VideoCard = ({data}) =>{
 
 
     return (
-        <div className="product-card">
+        <div className="product-card mainpage-video-card-container">
 
         {viewModal && <PlaylistModal setViewOption={setViewModal} videoData={data}/>}
   

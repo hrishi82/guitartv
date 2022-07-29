@@ -11,7 +11,7 @@ export const videos = [
     title: "Do you Djent?",
     creator: "Rick Beato",
     views: 156004,
-    category: "Djent",
+    genre: "Djent",
     src: "https://www.youtube.com/embed/nHshYg9ONls",
     thumbnail: "https://i.ytimg.com/vi/nHshYg9ONls/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA9ccMdePx-CKF9ngQatCJLumvdZQ"
   },
@@ -20,7 +20,7 @@ export const videos = [
     title: "ERRA - Nigh To Silence [Official Music Video]",
     creator: "ERRA",
     views: 136520,
-    category: "Djent",
+    genre: "Djent",
     src: "https://www.youtube.com/embed/mDKIIDQczWI",
     thumbnail: "https://i.ytimg.com/vi/mDKIIDQczWI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBGnXs_tSmPYLsLiEkRiMRl_MPRFw"
   },
@@ -29,34 +29,34 @@ export const videos = [
     title: "Periphery - Marigold (Guitar Playthrough)",
     creator: "Periphery",
     views: 80467,
-    category: "Djent",
+    genre: "Djent",
     src: "https://www.youtube.com/embed/zBWURleQuLc",
-    thumbnail: "https://res.cloudinary.com/dac2rwutk/image/upload/v1649336619/marigold_pxmctg.jpg"
+    thumbnail: "https://i.ytimg.com/vi/zBWURleQuLc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASlIVcvUeKlgW-EyFvTemIRdrHJw"
   },
   {
     _id: uuid(),
     title: "ERRA - Snowblood (Guitar Playthrough)",
     creator: "ERRA",
     views: 97467,
-    category: "Djent",
+    genre: "Djent",
     src: "https://www.youtube.com/embed/nP03YAzJEqY",
     thumbnail: "https://i.ytimg.com/vi/nP03YAzJEqY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDI8le4Pm_F0u4UN_dKTKbsZ5i5FQ"
   },
   {
     _id: uuid(),
-    title: "Ishimura - Jason Richardson & Luke Holland",
-    creator: "Jason Richardson",
+    title: "TOP 80 GREATEST GUITAR INTROS",
+    creator: "Paul Davids",
     views: 34467,
-    category: "Djent",
-    src: "https://www.youtube.com/embed/yAG3inRtrmM",
-    thumbnail: "https://res.cloudinary.com/dac2rwutk/image/upload/v1649336619/ishimura_brkh7g.jpg"
+    genre: "Blues",
+    src: "https://www.youtube.com/embed/Le9v4F7NXEI",
+    thumbnail: "https://i.ytimg.com/vi/Le9v4F7NXEI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAoFqOsQ0Spjc4cTVM2S69dGnSweQ"
   },
   {
     _id: uuid(),
     title: "John Petrucci - Rock Discipline",
     creator: "John Petrucci",
     views: 124467,
-    category: "Rock",
+    genre: "Rock",
     src: "https://www.youtube.com/embed/3Ababg5Y8kA",
     thumbnail: "https://res.cloudinary.com/dac2rwutk/image/upload/v1649336613/rockdiscipline_gggixu.jpg"
   },
@@ -65,18 +65,36 @@ export const videos = [
     title: "Dream Theater - Hollow Years (Live at Budokan)",
     creator: "Dream Theater",
     views: 132267,
-    category: "Progressive",
+    genre: "Progressive",
     src: "https://www.youtube.com/embed/Xc5tRUkiAe8",
     thumbnail: "https://i.ytimg.com/vi/Xc5tRUkiAe8/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDbEy8YAQHKUzUzifPc53duoWDYuA"
   },
   {
     _id: uuid(),
-    title: "B.B. King - The Thrill Is Gone [Crossroads 2010]",
-    creator: "B.B. King",
+    title: "Play Blues On Guitar In Any Key (with this riff)",
+    creator: "Acoustic Life",
     views: 264467,
-    category: "Blues",
-    src: "https://www.youtube.com/embed/SgXSomPE_FY",
-    thumbnail: "https://res.cloudinary.com/dac2rwutk/image/upload/v1649336619/bbking_fhdh02.jpg"
+    genre: "Blues",
+    src: "https://www.youtube.com/embed/okU5U4or928",
+    thumbnail: "https://i.ytimg.com/vi/btoooVk54LY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtP2dlM0_Q7N88VcrtmkpL-7AYgQ"
+  },
+  {
+    _id: uuid(),
+    title: "10 Levels of Math Rock (Feat. Manuel Gardner Fernandes)",
+    creator: "Nik Nocturnal",
+    views: 16467,
+    genre: "Math rock",
+    src: "https://www.youtube.com/embed/VGidMCdGJFA",
+    thumbnail: "https://i.ytimg.com/vi/VGidMCdGJFA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDm6Fx_Fid3869ALMk0_yghH4fVyA"
+  },
+  {
+    _id: uuid(),
+    title: "Covet - Shibuya (ft.San Holo) (official video)",
+    creator: "Covet",
+    views: 524561,
+    genre: "Math rock",
+    src: "https://www.youtube.com/embed/RXGwVJCdV6A",
+    thumbnail: "https://i.ytimg.com/vi/RXGwVJCdV6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAL7BEfuIcjTuXuKUlNrt-iJkCJIQ"
   },
 
 ];

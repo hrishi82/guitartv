@@ -139,6 +139,10 @@ body{
     color: var(--text-secondary-clr);
     background-color: var(--text-default-clr);
   }
+.btn-secondary:hover{
+    color: var(--text-default-clr);
+    background-color: var(--text-secondary-clr);
+  }
 
 
 
