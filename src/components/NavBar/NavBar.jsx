@@ -1,11 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./navbar.css"
 import {useAuth} from "../../context/authContext"
 import {useData} from "../../context/dataContext"
-
-
-
-
+import {ActionNav} from "./ActionNav"
+import { useState, useEffect } from "react"
 
 const NavBar = () => {
 
@@ -23,7 +21,21 @@ const NavBar = () => {
     dispatch({type: "SET_HISTORY", payload: []})
   }
 
+  let location = useLocation();
+
+  const [actionNavActive, setActionNavActive] = useState(false)
+
+  useEffect(()=>{
+    if (location.pathname==="/allvideos"){
+      setActionNavActive(true)
+    }else{
+      setActionNavActive(false)
+    }
+}, [location])
+
+
   return (
+    <>
     <nav className="nav-wrapper">
       <nav className="nav-items-left">
         <h4 className="nav-title">
@@ -58,11 +70,11 @@ const NavBar = () => {
           LOGIN
         </Link>}
 
-         {token && <Link to="/profilepage" className="nav-link">
-          PROFILE
-        </Link>}
       </nav>
+      
     </nav>
+   {actionNavActive && <ActionNav />}
+    </>
   );
 };
 

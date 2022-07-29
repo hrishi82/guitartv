@@ -1,0 +1,66 @@
+.actionnav-main-container{
+    margin-left: 16rem;
+    background-color: rgb(52, 52, 52);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.actionnav-main-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .actionnav-main-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+
+.actionnav-section-wrapper-left{
+    padding-right: 2rem;
+    border-right: 1px solid white;
+}
+
+.actionNav-explore-all-btn{
+    white-space: nowrap
+}
+
+.actionnav-section-wrapper-right{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.actionnav-filterchip-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    color: white;
+    background-color: transparent;
+    outline: 1px solid rgb(127, 127, 127);
+    margin: 0 0.8rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.filterchip-wrapper-active{
+    background-color: white;
+    color: black;
+}
+
+.filterchip-name{
+    /* margin-right: 0.5rem; */
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width:1100px) {
+    .actionnav-main-container{
+        margin:0;
+    }
+}

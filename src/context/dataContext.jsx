@@ -24,14 +24,16 @@ const DataProvider = ({ children }) => {
 
   const initialData = {
     videoData: [],
-    allCategories: [],
+    allGenres: [],
+    allTags: [],
     likedVideos: [],
     watchLater: [],
     playlists: [],
     history: [],
     filters: {
-      categories: [],
+      genres: [],
       search: "",
+      tags: []
     },
   };
   const [state, dispatch] = useReducer(dataReducerFn, initialData);

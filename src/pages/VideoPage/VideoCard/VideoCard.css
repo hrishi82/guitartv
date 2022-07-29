@@ -1,10 +1,20 @@
 .product-card{
-    width: 21rem; 
+    width: 21rem;
     overflow: visible;
+    box-shadow: none;
+    border-radius: 0.5rem;
+}
+.product-card:hover{
+    outline: 1px solid rgb(118, 118, 118);
+}
+
+.mainpage-video-card-container{
+    width: auto;
 }
 
 .product-card-img-box{
     cursor: pointer;
+    overflow: hidden;
 }
 
 .video-card-body{
@@ -47,11 +57,12 @@
 
 .video-card-option-wrapper{
     background-color: var(--card-bg);
-    z-index: 1;
+    z-index: 4;
     position: absolute;
     right: 0;
     white-space: nowrap;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 1px solid rgb(74, 74, 74);
+    border-radius: 0.3rem;
 
 }
 
