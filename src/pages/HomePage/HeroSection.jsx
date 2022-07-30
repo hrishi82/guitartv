@@ -1,5 +1,14 @@
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import { useData } from "../../context/dataContext"
 const HeroSection = () =>{
+
+    const {dispatch} = useData()
+    const navigate = useNavigate()
+
+    const clickHandler = () =>{
+        dispatch({ type: "RESET_FILTERS" })
+        navigate("/allvideos")
+    }
     return (
         <section className="hero-container">
         <div className="hero-img-box">
@@ -12,7 +21,7 @@ const HeroSection = () =>{
         </section>
 
         <div className="header-btn-container text-center">
-            <Link to="/allvideos" className="btn pill-btn pill-btn-lg btn-secondary">Explore All</Link>
+            <button className="btn pill-btn pill-btn-lg btn-secondary" onClick={clickHandler}>Explore All</button>
         </div>
     </section>
     )
