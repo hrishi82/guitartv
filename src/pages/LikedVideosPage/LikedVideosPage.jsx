@@ -12,7 +12,7 @@ export const LikedVideosPage = () =>{
         <>
         <AsideBar/>
     <section className="products-container">
-      <h3 className="products-container-info-text">Showing {state.likedVideos.length} videos </h3>
+      <h3 className="products-container-info-text">Showing {state.likedVideos.length} {state.likedVideos?.length>1 ? "videos": "video"} </h3>
       <div className="products-container-content">
         {state.likedVideos.map((el) => {
           return (

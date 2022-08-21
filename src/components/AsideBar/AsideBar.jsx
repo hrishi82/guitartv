@@ -1,34 +1,44 @@
 import "./asidebar.css";
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 export const AsideBar = () => {
   return (
     <aside className="sidebar">
       <ul className="sidebar-list-container">
         <li className="sidebar-li-item">
-          <Link to="/allvideos" className="sidebar-links" >
+          <NavLink to="/allvideos" className={({ isActive }) =>
+              isActive ? "navlink-active" : "sidebar-links"
+            } >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className="sidebar-li-item">
-          <Link to="/allplaylistpage" className="sidebar-links" >
+          <NavLink to="/allplaylistpage" className={({ isActive }) =>
+              isActive ? "navlink-active" : "sidebar-links"
+            } >
             Playlist
-          </Link>
+          </NavLink>
         </li>
         <li className="sidebar-li-item">
-          <Link to="/likedvideospage" className="sidebar-links">
+          <NavLink to="/likedvideospage" className={({ isActive }) =>
+              isActive ? "navlink-active" : "sidebar-links"
+            }>
             Liked Videos
-          </Link>
+          </NavLink>
         </li>
         <li className="sidebar-li-item">
-          <Link to="/watchlaterpage" className="sidebar-links">
+          <NavLink to="/watchlaterpage" className={({ isActive }) =>
+              isActive ? "navlink-active" : "sidebar-links"
+            }>
             Watch Later
-          </Link>
+          </NavLink>
         </li>
         <li className="sidebar-li-item">
-          <Link to="/historypage" className="sidebar-links" >
+          <NavLink to="/historypage" className={({ isActive }) =>
+              isActive ? "navlink-active" : "sidebar-links"
+            } >
             History
-          </Link>
+          </NavLink>
         </li>
       </ul>
 

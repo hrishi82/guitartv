@@ -10,7 +10,7 @@ export const WatchlaterPage = () =>{
         <>
         <AsideBar/>
     <section className="products-container">
-      <h3 className="products-container-info-text">Showing {state.watchLater?.length} {state.watchLater?.length>1 ? "videos": "video"} </h3>
+      <h3 className="products-container-info-text">Showing {state.watchLater?.length ? state.watchLater?.length: 0} {state.watchLater?.length>1 ? "videos": "video"} </h3>
       <div className="products-container-content">
         {state.watchLater?.map((el) => {
           return (

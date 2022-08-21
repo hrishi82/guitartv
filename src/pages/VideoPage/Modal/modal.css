@@ -1,9 +1,21 @@
 /* Modal styles */
+
+
+
 .modal{
     width: 18rem;
     padding: 0;
     background-color: var(--card-bg);
     display: block;
+    border-radius: 0.5rem;
+    outline: 0.5px solid rgb(85, 85, 85);
+}
+
+.modal-Background{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
 }
 
 .modal-title{
@@ -25,7 +37,8 @@
 
 .modal-mid-container{
     width: 100%;
-    padding: 1rem 1.5rem;
+
+    padding: 2rem 1.5rem;
     max-height: 20rem;
     overflow-y: scroll;
 }
@@ -46,6 +59,15 @@
 .li-playlist-checkbox{
     font-size: 1rem;
     cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+/* .li-playlist-checkbox:disabled{
+    
+} */
+
+.li-playlist-checkbox:checked{
+    background-color: var(--primary-clr);
 }
 
 .li-modal-playlist-name{
@@ -55,6 +77,7 @@
     color: var(--text-default-clr)
 }
 
+
 .newplaylist-name{
     width: 100%;
     background-color: inherit;
@@ -63,6 +86,12 @@
     margin-top: 1rem;
     color: white;
     border-bottom: 1px solid var(--text-grey)
+}
+
+.newplaylist-name:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--primary-clr)
 }
 
 .newplaylist-create-btn{

@@ -17,7 +17,7 @@ export const PlaylistVideosPage = () => {
       <AsideBar />
       <section className="products-container">
         <h3 className="products-container-info-text">
-          Showing { playlistData?.videos?.length} videos from " {playlistData.title} "
+          Showing { playlistData?.videos?.length} { playlistData?.videos?.length>1 ? "videos": "video"} from " {playlistData.title} "
         </h3>
         <div className="products-container-content">
           {playlistData?.videos?.length>0 && playlistData?.videos?.map((el) => {

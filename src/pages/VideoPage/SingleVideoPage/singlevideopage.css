@@ -1,58 +1,143 @@
-
 /* Video Page styles */
 
-.blur-bg{
-    /* Blur and de-color */
-  -webkit-filter: blur(5px) grayscale(50%);
-
-  /* Recede */
-  -webkit-transform: scale(0.9);
+.singleVideo-page-container {
+  max-width: 80rem;
+  margin: auto;
+  height: auto;
+  margin-top: 3rem;
+  display: flex;
+  padding: 1.5rem;
+  margin-bottom: 5rem;
 }
 
-.singleVideo-page-container{
-    max-width: 60rem;
-    margin: auto;
-    height: 100vh;
-    margin-top: 3rem;
+.singleVideo-page-container-left {
+  width: 70%;
+}
+.singleVideo-page-container-right {
+  width: 30%;
+  margin-left: 2rem;
 }
 
-.videoPlayer-cont{
-    height: 55vh;
-} 
+.singleVideo-page-container-right .suggestion-card-product-card {
+  margin-bottom: 1rem;
+}
 
-.video-details-cont{
-    width: 100%;
+.suggestedVideo-text-heading {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+}
+
+.videoPlayer-cont {
+  height: 55vh;
+}
+
+.video-details-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 2rem 0 1rem 0;
+  color: var(--text-default-clr);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid grey;
+}
+
+.video-creator-main-wrapper{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 3rem;
-    color: var(--text-default-clr);
-    padding-bottom: 1rem;
-    border-bottom: 1px solid grey
+    padding-bottom: 1.5rem;
+
 }
 
-.list-wrapper{
-    display: flex;
+.video-creator-details-container{
+    margin-left: 0.5rem;
 }
 
-.video-title{
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem
-}
-
-.video-secondary-text{
-    font-size: 0.9rem;
-    color: var(--text-grey)
-}
-
-.video-options{
-    margin-left: 3rem;
+.video-creator-name{
     font-size: 1rem;
-    cursor: pointer
+    margin-bottom: 0.2rem;
+    font-weight: 500;
 }
 
-.video-reaction-button{
-    font-size: 2rem;
+.video-creator-subscribers {
+    font-size: 0.8rem;
+    color: var(--text-grey);
+  }
+
+.video-creator-videodescription{
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    font-weight: 300;
 }
 
 
+
+.list-wrapper {
+  display: flex;
+}
+
+.video-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+}
+
+.video-secondary-text {
+  font-size: 0.9rem;
+  color: var(--text-grey);
+}
+
+.video-options {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-options-active {
+  color: black;
+  background-color: white;
+}
+
+.video-options span {
+  margin-left: 0.5rem;
+}
+
+.video-reaction-button {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .singleVideo-page-container {
+    width: 98vw;
+    height: auto;
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+
+  .singleVideo-page-container-left {
+    width: 100%;
+  }
+
+  .singleVideo-page-container-right {
+    width: 100%;
+    margin: 3rem 0rem;
+  }
+
+  .videoPlayer-cont {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width:768px) {
+
+  .videoPlayer-cont {
+    height: 30vh;
+  }
+
+}

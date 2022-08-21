@@ -16,6 +16,8 @@
     padding: 0;
     margin: 7rem 0 2rem 0;
 }
+
+
 .sidebar-li-item {
     padding: 0.7rem 1rem;
     font-size: 1rem;
@@ -25,15 +27,26 @@
 }
 
 
-
-.sidebar-li-item:active {
-    font-size: 1.2rem;
+.sidebar-li-item:hover {
+    font-size: 1.1rem;
 }
 
 
 .sidebar-links{
     text-decoration: none;
     color: var(--text-default-clr);
+    width: 100%;
+    height: 100%;
+}
+
+
+.navlink-active{
+    color: orange;
+    text-decoration: none;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
+    padding: 0.5rem 1rem;
+    /* border-radius: 2rem; */
 }
 
 /* Responsive Style */
