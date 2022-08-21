@@ -66,6 +66,15 @@ export const dataReducerFn = (state, action) => {
           } };
       }
 
+    case "SET_VIDEO_DATA_FOR_PLAYLIST":
+        {
+          return { ...state, videoDataForPlaylist: action.payload };
+        }
+    case "RESET_VIDEO_DATA_FOR_PLAYLIST":
+        {
+          return { ...state, videoDataForPlaylist: {} };
+        }
+
     default:
       return state;
   }

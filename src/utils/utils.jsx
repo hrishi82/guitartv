@@ -1,4 +1,4 @@
-
+import { faker } from "@faker-js/faker";
 
 export const filterByGenre = (state, data) =>{
     let videoData = [...data]
@@ -7,3 +7,12 @@ export const filterByGenre = (state, data) =>{
     }
     return videoData
 }
+
+export const createRandomUser = () => {
+    return {
+      name: faker.name.findName(),
+      email: faker.internet.email(),
+      password: faker.internet.password(),
+    };
+  };
+  

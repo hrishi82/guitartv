@@ -7,6 +7,15 @@ export const loginDetailsFunc = async (email, password) => {
   return resp;
 };
 
+
+export const SignupServices = async ({ email, password, name }) =>
+await axios.post('/api/auth/signup', {
+  email,
+  password,
+  name
+});
+
+
 export const GetLikedVideos = async ({ encodedToken }) => {
   const response = await axios.get("/api/user/likes", {
     headers: { authorization: encodedToken },

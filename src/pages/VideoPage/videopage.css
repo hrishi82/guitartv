@@ -6,10 +6,15 @@
     margin: auto;
     color: var(--text-default-clr);
     margin-left: 18rem;
+    margin-right: 1rem;
     margin-top: 2rem;
     justify-items: stretch;
     /* width: 90rem; */
 }
+
+/* .mainpage-allvideos-container{
+    
+} */
 
 .products-container-info-text{
     font-size: 1.1rem;

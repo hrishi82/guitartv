@@ -1,4 +1,5 @@
 import {useContext, createContext, useEffect, useState} from "react"
+import {SignupServices} from "../services/services"
 
 const AuthContext = createContext()
 
@@ -15,8 +16,27 @@ const AuthProvider = ({children}) =>{
         }
       }, []);
 
+      const signupUser = async (email, password, name) => {
+        try {
+          const resp = await SignupServices({ email, password, name });
+          if (resp.status === 201) {
+            localStorage.setItem(
+              'login',
+              JSON.stringify({
+                token: resp.data.encodedToken,
+                user: resp.data.createdUser,
+              })
+            );
+            setUser(resp.data.createdUser);
+            setToken(resp.data.encodedToken);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
     return (
-        <AuthContext.Provider value={{user, setUser, token, setToken}}>
+        <AuthContext.Provider value={{user, setUser, token, setToken, signupUser}}>
             {children}
         </AuthContext.Provider>
     )

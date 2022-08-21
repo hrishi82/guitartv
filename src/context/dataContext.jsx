@@ -1,4 +1,10 @@
-import { useContext, createContext, useEffect, useReducer } from "react";
+import {
+  useState,
+  useContext,
+  createContext,
+  useEffect,
+  useReducer,
+} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { dataReducerFn } from "../reducer/dataReducerFn";
@@ -13,7 +19,7 @@ import {
   getHistoryVideosService,
   addVideosToHistoryService,
   deleteHistoryVideoService,
-  deleteAllHistoryService
+  deleteAllHistoryService,
 } from "../services/services";
 
 const DataContext = createContext();
@@ -21,6 +27,8 @@ const DataContext = createContext();
 const DataProvider = ({ children }) => {
   const { token } = useAuth();
   const navigate = useNavigate();
+
+  const [viewModal, setViewModal] = useState(false);
 
   const initialData = {
     videoData: [],
@@ -33,8 +41,9 @@ const DataProvider = ({ children }) => {
     filters: {
       genres: [],
       search: "",
-      tags: []
+      tags: [],
     },
+    videoDataForPlaylist: {},
   };
   const [state, dispatch] = useReducer(dataReducerFn, initialData);
 
@@ -137,7 +146,10 @@ const DataProvider = ({ children }) => {
       });
 
       if (response.status === 200 || response.status === 201) {
-        dispatch({ type: "SET_WATCHLATER_VIDEOS", payload: response.data.watchlater });
+        dispatch({
+          type: "SET_WATCHLATER_VIDEOS",
+          payload: response.data.watchlater,
+        });
       }
     } catch (err) {
       console.log(err);
@@ -151,17 +163,19 @@ const DataProvider = ({ children }) => {
       }
       const response = await deleteWatchlaterVideoService({
         encodedToken: token,
-        videoId: videoData._id
+        videoId: videoData._id,
       });
 
       if (response.status === 200 || response.status === 201) {
-        dispatch({ type: "SET_WATCHLATER_VIDEOS", payload: response.data.watchlater });
+        dispatch({
+          type: "SET_WATCHLATER_VIDEOS",
+          payload: response.data.watchlater,
+        });
       }
     } catch (err) {
       console.log(err);
     }
   };
-
 
   const getHistoryVideos = async () => {
     if (!token) {
@@ -209,7 +223,7 @@ const DataProvider = ({ children }) => {
       }
       const response = await deleteHistoryVideoService({
         encodedToken: token,
-        videoId: videoData._id
+        videoId: videoData._id,
       });
 
       if (response.status === 200 || response.status === 201) {
@@ -229,8 +243,8 @@ const DataProvider = ({ children }) => {
       const response = await deleteAllHistoryService({
         encodedToken: token,
       });
-      console.log("from history", response)
-      
+      console.log("from history", response);
+
       if (response.status === 200 || response.status === 201) {
         dispatch({
           type: "SET_HISTORY",
@@ -242,10 +256,21 @@ const DataProvider = ({ children }) => {
     }
   };
 
-
   return (
     <DataContext.Provider
-      value={{ state, dispatch, addVideoToPlaylist, deleteVideoFromPlaylist, addVideosToWatchlater, deleteVideosFromWatchlater, addVideosToHistory, deleteVideosFromHistory, deleteAllHistory }}
+      value={{
+        state,
+        dispatch,
+        addVideoToPlaylist,
+        deleteVideoFromPlaylist,
+        addVideosToWatchlater,
+        deleteVideosFromWatchlater,
+        addVideosToHistory,
+        deleteVideosFromHistory,
+        deleteAllHistory,
+        viewModal,
+        setViewModal,
+      }}
     >
       {children}
     </DataContext.Provider>

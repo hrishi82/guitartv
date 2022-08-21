@@ -3,17 +3,17 @@ import "./VideoCard.css"
 import {useState} from "react"
 import {useData} from "../../../context/dataContext"
 import {useAuth} from "../../../context/authContext"
-import {PlaylistModal} from "../Modal/Modal"
+
 
 
 export const VideoCard = ({data}) =>{
     const [viewOption, setViewOption] = useState(false)
-    const [viewModal, setViewModal] = useState(false)
+    // const [viewModal, setViewModal] = useState(false)
     const [inWatchlist, setInWatchlist] = useState(false)
 
     const navigate = useNavigate()
 
-    const {state, dispatch, addVideosToWatchlater, deleteVideosFromWatchlater, addVideosToHistory} = useData()
+    const {state, dispatch, addVideosToWatchlater, deleteVideosFromWatchlater, addVideosToHistory, setViewModal} = useData()
     const {token} = useAuth()
 
     const {
@@ -50,13 +50,15 @@ export const VideoCard = ({data}) =>{
         deleteVideosFromWatchlater(data)
         setInWatchlist(false)
       }
+
+      setViewOption(false)
     }
 
 
     return (
         <div className="product-card mainpage-video-card-container">
 
-        {viewModal && <PlaylistModal setViewOption={setViewModal} videoData={data}/>}
+        {/* {viewModal && <PlaylistModal setViewOption={setViewModal} videoData={data}/>} */}
   
         <div className="product-card-img-box" onClick={redirectToVideo}>
           <img
@@ -76,8 +78,12 @@ export const VideoCard = ({data}) =>{
 
             {viewOption && 
             <>
-                <div className="video-card-option-wrapper">
-                <p className="video-card-options" onClick={()=>setViewModal(true)}>Add to playlist</p>
+                <div className="video-card-option-wrapper video-card-dropdown-option-container">
+                <p className="video-card-options" onClick={()=>{
+                  setViewModal(true)
+                  setViewOption(false)
+                  dispatch({type: "SET_VIDEO_DATA_FOR_PLAYLIST", payload: data})
+                  }}>Add to playlist</p>
                 <p className="video-card-options" onClick={watchlaterHandler}>{inWatchlist ? "Delete from Watchlater":"Add to Watchlater"}</p>
             </div>
             </>}

@@ -32,7 +32,7 @@ export const LikedVideosCard = ({data}) =>{
 
     }
 
-    const deleteVideoHandler = async () => {
+    const deleteLikeVideoHandler = async () => {
         try {
           if (!token) {
             navigate("/loginpage");
@@ -77,14 +77,18 @@ export const LikedVideosCard = ({data}) =>{
             <p className="video-card-subtitle">{creator}</p>
           </section>
           <div className="videocard-option-container relative" onClick={showOptionFunc}>
-            <i className="fas fa-ellipsis-v" ></i>
+          <div className="video-card-option-wrapper" onClick={deleteLikeVideoHandler}>
+                    <i className="fas fa-trash-alt playlistcard-trashcan"></i>
+            </div>
+            
+            {/* <i className="fas fa-ellipsis-v" ></i>
 
             {viewOption && 
             <>
                 <div className="video-card-option-wrapper">
                 <p className="video-card-options" onClick={deleteVideoHandler}>Delete video from Liked Videos</p>
             </div>
-            </>}
+            </>} */}
 
           </div>
 

@@ -15,7 +15,7 @@ export const HistoryPage = () => {
       <section className="products-container">
         <div className="historypage-infoheder-wrapper">
           <h3 className="products-container-info-text">
-            Showing {state.history?.length}{" "}
+            Showing {state.history?.length ? state.history?.length: 0}{" "}
             {state.history?.length > 1 ? "videos" : "video"}{" "}
           </h3>
           <button onClick={deleteAllHistoryHandler} className="delete-history-btn">CLEAR HISTORY</button>

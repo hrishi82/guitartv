@@ -4,6 +4,7 @@ import {loginDetailsFunc, GetLikedVideos, getPlaylists, getHistoryVideosService,
 import "../Auth.css"
 import {useData} from "../../../context/dataContext"
 import {useAuth} from "../../../context/authContext"
+import {validateEmail} from "../../../utils/authUtils"
 
 const LoginPage = () => {
     const { token, setToken, user, setUser } = useAuth();
@@ -11,6 +12,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
   
     const [loginUser, setLoginUser] = useState({ email: "", password: "" });
+    const [authInputError, setAuthInputError] = useState({ email: "", password: "", errorMessage: "" });
 
  
     const loginHandler = async (e, loginUser, setLoginUser) => {
@@ -58,9 +60,30 @@ const LoginPage = () => {
             navigate("/allvideos")
 
         }catch(err){
-            console.log(err)
+          setAuthInputError({...authInputError, errorMessage: "Please provide proper input or credentials"})
         }
+    }
 
+    const credentialHandler = (e) =>{
+
+      setAuthInputError({...authInputError, errorMessage: ""})
+  
+      if(e.target.name=== "email"){
+        setLoginUser({ ...loginUser, email: e.target.value })
+        if (!validateEmail(e.target.value)) {
+          setAuthInputError({
+            ...authInputError,
+            email: 'Invalid email format',
+          });
+        } else {
+          setAuthInputError({ ...authInputError, email: '' });
+        }
+        
+        
+      }else if(e.target.name=== "password"){
+        setLoginUser({ ...loginUser, password: e.target.value })
+      }
+      
     }
   
     return (
@@ -71,29 +94,43 @@ const LoginPage = () => {
               <h2 className="text-center">Login</h2>
             </div>
   
+            {authInputError.errorMessage !== "" ? (
+                <div className='input auth-input-error-cont text-center'>
+                  {authInputError.errorMessage}
+                </div>
+              ) : null}
+
             <div className="input">
-              <label>Email</label>
-              <input
-                className="input-txt"
-                type="email"
-                value={loginUser.email}
-                onChange={(e) =>
-                  setLoginUser({ ...loginUser, email: e.target.value })
-                }
-              />
-            </div>
-  
-            <div className="input">
-              <label>Password</label>
-              <input
-                className="input-txt"
-                type="password"
-                value={loginUser.password}
-                onChange={(e) =>
-                  setLoginUser({ ...loginUser, password: e.target.value })
-                }
-              />
-            </div>
+            <label>Email</label>
+            <input
+              className="input-txt"
+              name="email"
+              type="email"
+              value={loginUser.email}
+              onChange={(e) =>
+                credentialHandler(e)
+              }
+            />
+          </div>
+
+          {authInputError.email ? (
+                <div className='input auth-input-error-cont'>
+                  {authInputError.email}
+                </div>
+              ) : null}
+
+          <div className="input">
+            <label>Password</label>
+            <input
+              className="input-txt"
+              type="password"
+              name="password"
+              value={loginUser.password}
+              onChange={(e) =>
+                credentialHandler(e)
+              }
+            />
+          </div>
   
             <div className="input input-flex-cont">
               <div className="input-condition-cont">
@@ -105,7 +142,7 @@ const LoginPage = () => {
                 to="/loginpage"
                 className="auth-form-forget-pass-alignment auth-page-link"
               >
-                Forget your Password?
+                Forgot your Password?
               </Link>
             </div>
   

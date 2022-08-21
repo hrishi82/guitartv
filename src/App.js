@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { HomePage, AllVideos, SingleVideoPage, LikedVideosPage, AllPlaylists, PlaylistVideosPage, WatchlaterPage, HistoryPage, LoginPage, ErrorPg } from "./pages";
+import { HomePage, AllVideos, SingleVideoPage, LikedVideosPage, AllPlaylists, PlaylistVideosPage, WatchlaterPage, HistoryPage, LoginPage, ErrorPg, LogoutPage, SignupPage } from "./pages";
 import { NavBar} from "./components";
 import {ProtectedRoute} from "./Routes/ProtectedRoute"
 
@@ -30,6 +30,8 @@ function App() {
           <Route path="/historypage" element={<ProtectedRoute><HistoryPage /></ProtectedRoute>} />
 
           <Route path="/loginpage" element={<LoginPage />} />
+          <Route path="/signuppage" element={<SignupPage />} />
+          <Route path="/logoutpage" element={<LogoutPage />} />
           <Route path="*" element={<ErrorPg />} />
         </Routes>
     </div>
